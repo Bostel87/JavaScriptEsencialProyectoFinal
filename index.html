@@ -11,6 +11,7 @@
       <h2>Pulse En La Consulta Que Desea Realizar</h2>
       <hr>
       <br>
+      <!-- Botones de consulta de Estudiantes -->
       <input   type="button"  id="mostrar"  value="Mostrar Todos"  onclick="MostrarTodos()" >
       <input   type="button"  id="promedio"  value="Calcular Nota Promedio"  onclick="Promedio()">
       <input   type="button"  id="mayor"  value="Nota Mayor"  onclick="Mayor()">
@@ -18,15 +19,19 @@
       <input   type="button"  id="reprobado"  value="Estudiantes Reprobados"  onclick="Reprobados()">
       <input   type="button"  id="aprobado"  value="Estudiantes Aprobados"  onclick="Aprobados()" >
       <hr>
+      <!-- creacion de textbox y boton para busqueda por codigo -->
       <h2>Buscar Por Codigo de Estudiante</h2>
       <label   for="txtbuscar">Ingrese el Codigo Del Estudiante</label><br>
       <input   type="text"  id="txtbuscar"  name="txtbuscar"  placeholder="Ej: 001"><br>
       <input   type="button"  id="btnbuscar"  value="Buscar"  onclick="Buscar()"><br>
+      <!-- creacion de la etiqueta de titulo y el parrafo de la informacion a mostrar -->
       <h1 id="lblinfo"></h1>
       <p id="datos"></p>
     </div>
   </body>
   <script >
+
+  // creacion del JSON con la informacion de los Estudiantes
   var Estudiantes = [
   {
     "codigo": "001",
@@ -71,6 +76,7 @@
   }
 ]
 
+// Creacion de metodo para mostrar todos los datos del JSON
 function MostrarTodos(json){
 var datos="";
 
@@ -81,6 +87,7 @@ document.getElementById("lblinfo").innerHTML ="Mostrar Todos";
 document.getElementById("datos").innerHTML = datos;
 }
 
+// Creacion del metodo para calcular el promedio general
 function Promedio(json){
   var sum = 0;
   var res;
@@ -94,6 +101,7 @@ function Promedio(json){
 
 }
 
+// Creacion del metodo para buscar la nota mayor
 function Mayor(json){
 
   var num1;
@@ -110,6 +118,7 @@ function Mayor(json){
 
 }
 
+// Creacion del metodo para buscar la nota menor
 function Menor(json){
   var num1;
   var num2;
@@ -125,6 +134,7 @@ function Menor(json){
 
 }
 
+// Creacion del metodo para buscar al estudiante por su codigo
 function Buscar(){
   var codigo="";
   var cod1= document.getElementById("txtbuscar").value;
@@ -142,6 +152,7 @@ function Buscar(){
   document.getElementById("txtbuscar").value= "";
 }
 
+// Creacion del metodo para buscar los Estudiantes Reprobados
 function Reprobados(json){
   var repro="";
   var nota;
@@ -156,6 +167,7 @@ function Reprobados(json){
   }
 }
 
+// Creacion del metodo para buscar los Estudiantes Aprobados
 function Aprobados(json){
   var apro="";
   var nota;
