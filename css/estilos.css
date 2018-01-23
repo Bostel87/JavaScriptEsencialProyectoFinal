@@ -1,0 +1,167 @@
+.titulo{
+  margin-top: 130px;
+  margin-left: 100px;
+  margin-right: 100px;
+  background-color: rgb(122, 120, 255);
+  padding: 10px ;
+}
+
+.titulo h1{
+
+  text-align: center;
+  font-family: verdana;
+  text-decoration: underline;
+  color: black;
+}
+
+.titulo h1:hover{
+  color: white;
+  font-family: tahoma;
+}
+
+.titulo h2{
+  text-align: center;
+  font-family: verdana;
+  color: black;
+}
+
+.titulo h2:hover{
+  color: white;
+  font-family: tahoma;
+}
+
+p{
+  font-family: verdana;
+}
+
+#mostrar{
+  background-color: rgb(57, 193, 236);
+  border-radius: 5px;
+  font-family: tahoma;
+  height: 30px;
+  width: 100px;
+  border-color: rgb(111, 255, 164);
+  color:white;
+}
+
+#promedio{
+  background-color: rgb(57, 193, 236);
+  border-radius: 5px;
+  font-family: tahoma;
+  height: 30px;
+  width: 150px;
+  border-color: rgb(111, 255, 164);
+  color: white;
+}
+
+#mayor{
+  background-color: rgb(57, 193, 236);
+  border-radius: 5px;
+  font-family: tahoma;
+  height: 30px;
+  width: 100px;
+  border-color: rgb(111, 255, 164);
+  color: white;
+}
+
+#menor{
+  background-color: rgb(57, 193, 236);
+  border-radius: 5px;
+  font-family: tahoma;
+  height: 30px;
+  width: 100px;
+  border-color: rgb(111, 255, 164);
+  color: white;
+}
+#reprobado{
+  background-color: rgb(57, 193, 236);
+  border-radius: 5px;
+  font-family: tahoma;
+  height: 30px;
+  width: 150px;
+  border-color: rgb(111, 255, 164);
+  color: white;
+}
+#aprobado{
+  background-color: rgb(57, 193, 236);
+  border-radius: 5px;
+  font-family: tahoma;
+  height: 30px;
+  width: 150px;
+  border-color: rgb(111, 255, 164);
+  color: white;
+}
+
+#mostrar:hover{
+  background-color: rgb(111, 255, 164);
+  text-decoration: underline;
+  color: black;
+}
+
+#promedio:hover{
+  background-color: rgb(111, 255, 164);
+  text-decoration: underline;
+  color: black;
+}
+
+#mayor:hover{
+  background-color: rgb(111, 255, 164);
+  text-decoration: underline;
+  color: black;
+}
+
+#menor:hover{
+  background-color: rgb(111, 255, 164);
+  text-decoration: underline;
+  color: black;
+}
+
+#reprobado:hover{
+  background-color: rgb(111, 255, 164);
+  text-decoration: underline;
+  color: black;
+}
+
+#aprobado:hover{
+  background-color: rgb(111, 255, 164);
+  text-decoration: underline;
+  color: black;
+}
+
+input[id^='txt']{
+  width: 25%;
+  font-family: tahoma;
+  border-radius: 5px;
+  border-color: rgb(57, 193, 236);
+  background-color:rgb(57, 193, 236) ;
+  text-align: center;
+  color: white;
+}
+
+label{
+  font-family: verdana;
+  color: black;
+}
+
+label:hover{
+  color: white;
+  font-family: tahoma;
+}
+
+#btnbuscar{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(57, 193, 236);
+  border-radius: 5px;
+  font-family: tahoma;
+  height: 30px;
+  width: 100px;
+  text-decoration-color: rgb(138, 251, 255);
+  color: white;
+}
+
+#btnbuscar:hover{
+  background-color: rgb(111, 255, 164);
+  text-decoration: underline;
+  color: black;
+}

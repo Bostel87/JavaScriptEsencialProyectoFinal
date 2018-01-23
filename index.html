@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta   http-equiv="Content-Type" content="text/html"charset="utf-8">
+    <title>Prueba Modulo 1 JS</title>
+    <link   rel="stylesheet" href="css/estilos.css">
+  </head>
+  <body>
+    <div   class="titulo" align="center">
+      <h1>Consulta de Estudiantes</h1><br>
+      <h2>Pulse En La Consulta Que Desea Realizar</h2>
+      <hr>
+      <br>
+      <input   type="button"  id="mostrar"  value="Mostrar Todos"  onclick="MostrarTodos()" >
+      <input   type="button"  id="promedio"  value="Calcular Nota Promedio"  onclick="Promedio()">
+      <input   type="button"  id="mayor"  value="Nota Mayor"  onclick="Mayor()">
+      <input   type="button"  id="menor"  value="Nota Menor"  onclick="Menor()">
+      <input   type="button"  id="reprobado"  value="Estudiantes Reprobados"  onclick="Reprobados()">
+      <input   type="button"  id="aprobado"  value="Estudiantes Aprobados"  onclick="Aprobados()" >
+      <hr>
+      <h2>Buscar Por Codigo de Estudiante</h2>
+      <label   for="txtbuscar">Ingrese el Codigo Del Estudiante</label><br>
+      <input   type="text"  id="txtbuscar"  name="txtbuscar"  placeholder="Ej: 001"><br>
+      <input   type="button"  id="btnbuscar"  value="Buscar"  onclick="Buscar()"><br>
+      <h1 id="lblinfo"></h1>
+      <p id="datos"></p>
+    </div>
+  </body>
+  <script >
+  var Estudiantes = [
+  {
+    "codigo": "001",
+    "nombre": "Andres Astudillo",
+    "nota": 90
+  },{
+    "codigo": "002",
+    "nombre": "Marcos Roman",
+    "nota": 80
+  },{
+    "codigo": "003",
+    "nombre": "Andrea Miranda",
+    "nota": 70
+  },{
+    "codigo": "004",
+    "nombre": "Jose Plaza",
+    "nota": 95
+  },{
+    "codigo": "005",
+    "nombre": "Luis Palma",
+    "nota": 80
+  },{
+    "codigo": "006",
+    "nombre": "Joel Marcillo",
+    "nota": 85
+  },{
+    "codigo": "007",
+    "nombre": "Boris Parrales",
+    "nota": 100
+  },{
+    "codigo": "008",
+    "nombre": "Martin Del Potro",
+    "nota": 70
+  },{
+    "codigo": "009",
+    "nombre": "Zaul Perez",
+    "nota": 50
+  },{
+    "codigo": "010",
+    "nombre": "Manuel Villalta",
+    "nota": 40
+  }
+]
+
+function MostrarTodos(json){
+var datos="";
+
+for (var i = 0; i < Estudiantes.length; i++) {
+  datos+="Codigo: "+ Estudiantes[i].codigo +"<br>"+" Nombre: "+ Estudiantes[i].nombre +"<br>" +" Nota: " + Estudiantes[i].nota+"<br>"+"<br>";
+}
+document.getElementById("lblinfo").innerHTML ="Mostrar Todos";
+document.getElementById("datos").innerHTML = datos;
+}
+
+function Promedio(json){
+  var sum = 0;
+  var res;
+
+  for (var i = 0; i < Estudiantes.length; i++) {
+    sum = sum + Estudiantes[i].nota;
+  }
+  res = sum / 10;
+  document.getElementById("lblinfo").innerHTML ="El Promedio General es:";
+  document.getElementById("datos").innerHTML = res;
+
+}
+
+function Mayor(json){
+
+  var num1;
+  var num2=0;
+  for (var i = 0; i < Estudiantes.length; i++) {
+  num1 = Estudiantes[i].nota;
+  if(num2<num1){
+    num2 = num1;
+
+  }
+  }
+  document.getElementById("lblinfo").innerHTML ="La nota Mayor es:";
+  document.getElementById("datos").innerHTML = num2;
+
+}
+
+function Menor(json){
+  var num1;
+  var num2;
+  for (var i = 0; i < Estudiantes.length; i++) {
+  num1 = Estudiantes[i].nota;
+  num2 = Estudiantes[i].nota;
+  if(num2<num1){
+    num2 = num1;
+  }
+  }
+  document.getElementById("lblinfo").innerHTML ="La nota Menor es:";
+  document.getElementById("datos").innerHTML = num2;
+
+}
+
+function Buscar(){
+  var codigo="";
+  var cod1= document.getElementById("txtbuscar").value;
+
+  for (var i = 0; i < Estudiantes.length; i++) {
+    codigo = Estudiantes[i].codigo;
+    if(cod1 == codigo){
+      document.getElementById("lblinfo").innerHTML = "El Codigo Le Pertenece Al Estudiante:"
+      document.getElementById("datos").innerHTML = Estudiantes[i].nombre;
+      document.getElementById("txtbuscar").value= "";
+      return;
+    }
+  }
+  alert("Ingrese el Codigo Correcto");
+  document.getElementById("txtbuscar").value= "";
+}
+
+function Reprobados(json){
+  var repro="";
+  var nota;
+  for (var i = 0; i < Estudiantes.length; i++) {
+    nota = Estudiantes[i].nota;
+    if(nota < 70){
+      document.getElementById("lblinfo").innerHTML = "Estudiantes Reprobados";
+      repro+="Estudiante: "+Estudiantes[i].nombre+"<br>"+"Nota: "+Estudiantes[i].nota+"<br>"+"<br>";
+      document.getElementById("datos").innerHTML = repro;
+    }
+
+  }
+}
+
+function Aprobados(json){
+  var apro="";
+  var nota;
+  for (var i = 0; i < Estudiantes.length; i++) {
+    nota = Estudiantes[i].nota;
+    if(nota >= 70){
+      document.getElementById("lblinfo").innerHTML = "Estudiantes Aprobados";
+      apro+="Estudiante: "+Estudiantes[i].nombre+"<br>"+"Nota: "+Estudiantes[i].nota+"<br>"+"<br>";
+      document.getElementById("datos").innerHTML = apro;
+    }
+
+  }
+}
+
+  </script>
+</html>
